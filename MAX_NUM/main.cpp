@@ -21,7 +21,7 @@ void returnNextMaxNum(char arr[]){
         }
         break;
     }
-    for(j =i; j< len-1; j++){
+    for(j =i; j<=len-1; j++){
         if(arr[i-1] < arr[j]){
             continue;
         }
