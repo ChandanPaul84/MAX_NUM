@@ -16,7 +16,7 @@ void returnNextMaxNum(char arr[]){
     int len = (int)strlen(arr);
     int i,j;
     for(i= len-1; i>0; i--){
-        if(arr[i] < arr[i-1]){
+        if(arr[i] <= arr[i-1]){
             continue;
         }
         break;
@@ -29,8 +29,8 @@ void returnNextMaxNum(char arr[]){
     }
     if(i>1){
         char temp = arr[i-1];
-        arr[i-1] = arr[j];
-        arr[j] = temp;
+        arr[i-1] = arr[j-1];
+        arr[j-1] = temp;
     }
     reverse(arr, i, len);
 }
@@ -48,7 +48,7 @@ void reverse(char *arr, int i, int len)
 }
 
 int main() {
-    char arr[] = "218765";
+    char arr[] = "54";
     returnNextMaxNum(arr);
     puts(arr);
     return 0;
